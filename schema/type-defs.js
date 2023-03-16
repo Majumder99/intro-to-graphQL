@@ -4,6 +4,7 @@ const { gql } = require("graphql-tag");
 // which things to query from the api will be written here
 // like i wanna get the List of user so i write [User] and i will
 // be returing those list into users field
+// ! means required null not accceptable
 
 const typeDefs = gql`
   type User {
@@ -11,11 +12,20 @@ const typeDefs = gql`
     name: String!
     username: String!
     age: Int!
-    nationality: String!
+    nationality: Nationality!
+    friends: [User]
   }
 
   type Query {
     users: [User!]!
+    user(id: ID!): User
+  }
+
+  #IT'S MORE OR LESS LIKE VALIDATION
+  enum Nationality {
+    CANADA
+    BANGLADESH
+    INDIA
   }
 `;
 

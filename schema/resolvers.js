@@ -1,5 +1,7 @@
+lear
 //resolve fields
 const { UserList } = require("../FakeData.js");
+const _ = require("lodash")
 
 const resolvers = {
   Query: {
@@ -13,6 +15,9 @@ const resolvers = {
     users() {
       return UserList;
     },
+    user: (_,args) =>  {
+      return 
+    }
   },
 };
 
