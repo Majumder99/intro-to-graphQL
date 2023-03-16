@@ -14,11 +14,21 @@ const typeDefs = gql`
     age: Int!
     nationality: Nationality!
     friends: [User]
+    favouriteMovie: [Movie]
+  }
+
+  type Movie{
+    id: ID!
+    name: String!
+    yearOfPublication: Int!
+    isInTheaters: Boolean!
   }
 
   type Query {
     users: [User!]!
     user(id: ID!): User
+    movies: [Movie!]!
+    movie(name: String!): Movie
   }
 
   #IT'S MORE OR LESS LIKE VALIDATION
@@ -26,6 +36,11 @@ const typeDefs = gql`
     CANADA
     BANGLADESH
     INDIA
+  }
+  enum Movies{
+    GODFATHER
+    GOODFELLAS 
+    RRR
   }
 `;
 

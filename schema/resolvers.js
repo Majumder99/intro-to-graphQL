@@ -1,7 +1,6 @@
-lear
 //resolve fields
-const { UserList } = require("../FakeData.js");
-const _ = require("lodash")
+const { UserList, MovieList } = require("../FakeData.js");
+const _ = require("lodash");
 
 const resolvers = {
   Query: {
@@ -15,9 +14,21 @@ const resolvers = {
     users() {
       return UserList;
     },
-    user: (_,args) =>  {
-      return 
-    }
+    user: (parent, args) => {
+      const id = args.id;
+      //args is the argument that is passing
+      const user = _.find(UserList, { id: Number(id) });
+      return user;
+    },
+    movies: () => {
+      return MovieList;
+    },
+    movie: (parent, args) => {
+      const name = args.name;
+      //args is the argument that is passing
+      const movie = _.find(MovieList, { name });
+      return movie;
+    },
   },
 };
 
