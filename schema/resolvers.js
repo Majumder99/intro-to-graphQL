@@ -36,8 +36,13 @@ const resolvers = {
     favouriteMovie: () => {
       return _.filter(MovieList, (movie) => movie.yearOfPublication > 2010);
     },
-    
   },
+  Mutation: {
+    createUser: (parent, args) => {
+      const user = args.input
+      console.log(user)
+    }
+  }
 };
 
 module.exports = { resolvers };
