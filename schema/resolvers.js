@@ -3,6 +3,7 @@ const { UserList, MovieList } = require("../FakeData.js");
 const _ = require("lodash");
 
 const resolvers = {
+  //this is query type resolver
   Query: {
     //here we will write our functions to call the api
     // and get the data from the database and we will return
@@ -29,6 +30,13 @@ const resolvers = {
       const movie = _.find(MovieList, { name });
       return movie;
     },
+  },
+  //I can also use this for user type or any other type
+  User: {
+    favouriteMovie: () => {
+      return _.filter(MovieList, (movie) => movie.yearOfPublication > 2010);
+    },
+    
   },
 };
 

@@ -15,9 +15,10 @@ const typeDefs = gql`
     nationality: Nationality!
     friends: [User]
     favouriteMovie: [Movie]
+    likedMovie: Movies
   }
 
-  type Movie{
+  type Movie {
     id: ID!
     name: String!
     yearOfPublication: Int!
@@ -37,9 +38,9 @@ const typeDefs = gql`
     BANGLADESH
     INDIA
   }
-  enum Movies{
+  enum Movies {
     GODFATHER
-    GOODFELLAS 
+    GOODFELLAS
     RRR
   }
 `;

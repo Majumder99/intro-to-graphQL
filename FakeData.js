@@ -51,6 +51,7 @@ const UserList = [
     username: "rafe123",
     age: 60,
     nationality: "GERMANY",
+    likedMovie: "RRR",
   },
   {
     id: 5,
@@ -67,24 +68,28 @@ const MovieList = [
     name: "Avengers Endgame",
     yearOfPublication: 2019,
     isInTheaters: true,
+    likedMovie: "RRR",
   },
   {
     id: 2,
     name: "Interstellar",
     yearOfPublication: 2007,
     isInTheaters: true,
+    likedMovie: "RRR",
   },
   {
     id: 3,
     name: "Superbad",
     yearOfPublication: 2009,
     isInTheaters: true,
+    likedMovie: "RRR",
   },
   {
     id: 4,
     name: "PedroTech The Movie",
     yearOfPublication: 2035,
     isInTheaters: false,
+    likedMovie: "RRR",
   },
 ];
 
